@@ -35,17 +35,25 @@ To make the page use your project's vocabulary, add a term table to `CLAUDE.md` 
 ```markdown
 ## pr-explainer
 
-### 용어
-| 쓰지 말 것 | 쓸 말 | 이유 |
+### Terms
+| Avoid | Use | Why |
 |---|---|---|
-| 쉬는 주문 | 걸려 있는 주문 | resting order 의 업계 표현 |
+| sleeping order | resting order | the trade's own term |
 ```
 
-When you correct a term during a session, the skill proposes a new row for this table and adds it only after you agree.
+* The heading and columns may be in another language (e.g. `### 용어`).
+* The same section can also name your processes (for location badges), a style source, or where pages are kept.
+* When you correct a term during a session, the skill proposes a new row for this table and adds it only after you agree.
+
+## Languages
+
+* The page is written in the language of your request, in the same register.
+* Fixed labels (tab names, table headers, badges) come from `assets/strings.md`, which has English and Korean. Other languages are translated from the English column once per run.
+* Code, identifiers, and log strings are never translated.
 
 ## Unattended runs (CI)
 
-When nobody can answer questions, the skill asks nothing. It builds all three tabs from the checked-out tree and writes to the path the caller gives.
+When nobody can answer questions, the skill asks nothing. It builds all three tabs from the checked-out tree, and writes to the path and in the language the caller gives.
 
 ## License
 
